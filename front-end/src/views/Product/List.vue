@@ -60,6 +60,10 @@
     ) {
       store.dispatch('deleteProduct', id).then(() => {
         store.dispatch('getProducts');
+        store.commit('notify', {
+          type: 'error',
+          message: 'Product was successfully deleted.'
+        });
       });
     }
   }

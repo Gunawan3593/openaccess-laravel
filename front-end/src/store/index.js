@@ -10,6 +10,11 @@ const store = createStore({
       currentProduct: {
         loading: false,
         data: {}
+      },
+      notification: {
+        show: false,
+        type: null,
+        message: null
       }
     },
     getters: {},
@@ -70,6 +75,14 @@ const store = createStore({
       },
       setProducts: (state, products) => {
         state.products.data = products.data;
+      },
+      notify: (state, { message, type }) => {
+        state.notification.show = true;
+        state.notification.type = type;
+        state.notification.message = message;
+        setTimeout(() => {
+          state.notification.show = false;
+        }, 3000);
       }
     },
     modules: {}

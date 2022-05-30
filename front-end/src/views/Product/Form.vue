@@ -96,6 +96,10 @@ function saveProduct() {
       name: 'ProductEdit',
       params: { id: data.data.id }
     });
+    store.commit('notify', {
+      type: 'success',
+      message: 'Product was successfully updated.'
+    });
   }).catch((err) => {
     saveLoading.value = false;
     errors.value = err.response.data.errors;

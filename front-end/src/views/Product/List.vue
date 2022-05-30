@@ -20,7 +20,7 @@
               <tr v-if="products.loading" class="border border-slate-400 border-x-0 border-t-0 leading-8">
                 <td colspan="5" class="text-center text-base">Loading ...</td>
               </tr>
-              <tr  v-else v-for="(product, index) in products.data" :key="product.id" class="border border-slate-400 border-x-0 border-t-0 leading-8">
+              <tr v-else v-for="(product, index) in products.data" :key="product.id" class="border border-slate-400 border-x-0 border-t-0 leading-8">
                 <td>{{ index+1 }}</td>
                 <td>{{ product.name }}</td>
                 <td>{{ product.description }}</td>
@@ -31,6 +31,9 @@
 
                   <button type="button" @click="deleteProduct(product.id)" class="text-red-500">Delete</button>
                 </td>
+              </tr>
+              <tr v-if="!products.data.length && !products.loading" class="border border-slate-400 border-x-0 border-t-0 leading-8">
+                <td colspan="5" class="text-center text-base">There is no data.</td>
               </tr>
             </tbody>
           </table>

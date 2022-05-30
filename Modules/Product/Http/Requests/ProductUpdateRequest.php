@@ -15,7 +15,7 @@ class ProductUpdateRequest extends FormRequest
     {
         return [
             'id' => 'required',
-            'name' => 'required|string',
+            'name' => 'required|string|unique:products,name,'.$this->id,
             'description' => 'required|string',
             'price' => 'required|numeric',
             'qty' => 'required|numeric'
@@ -28,6 +28,7 @@ class ProductUpdateRequest extends FormRequest
             'id.required' => 'ID is required',
             'name.required' => 'Name is required.',
             'name.string' => 'Name must be string.',
+            'name.unique' => 'Name must be unique.',
             'description.required' => 'Description is required.',
             'description.string' => 'Description must be string.',
             'price.required' => 'Price is required.',

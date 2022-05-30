@@ -14,7 +14,7 @@ class ProductStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string',
+            'name' => 'required|string|unique:products',
             'description' => 'required|string',
             'price' => 'required|numeric',
             'qty' => 'required|numeric'
@@ -26,6 +26,7 @@ class ProductStoreRequest extends FormRequest
         return [
             'name.required' => 'Name is required.',
             'name.string' => 'Name must be string.',
+            'name.unique' => 'Name must be unique.',
             'description.required' => 'Description is required.',
             'description.string' => 'Description must be string.',
             'price.required' => 'Price is required.',

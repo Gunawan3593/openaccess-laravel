@@ -62,3 +62,62 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Installation
+
+### Back End Laravel Rest Api
+
+On the root folder running following script code
+
+```
+composer install
+```
+
+create .env file rom .env.example (just copy paste and rename)
+make your database and then setting your database connection in .env file
+
+```
+php artisan key:generate
+```
+
+Database Migration (Laravel Module)
+
+```
+php artisan module:migrate Product
+```
+
+Testing for back end rest api
+
+```
+php artisan test
+```
+
+for running laravel
+
+```
+php artisan serve
+```
+
+### Front End Vue Installation
+
+Front-end are located in front-end folder, 
+
+create .env file from .env.example from front-end folder, just copy paste and renamed it to .env then setup api end point (Default http://localhost:8000)
+
+running code below on front-end folder root
+
+```
+npm install
+npm run dev
+```
+
+running front end with call :
+
+http://localhost:3000
+
+
+
+
+
+
+

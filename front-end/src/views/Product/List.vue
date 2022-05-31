@@ -27,8 +27,7 @@
                 <td>{{ product.price }}</td>
                 <td class="text-center">{{ product.qty }}</td>
                 <td class="text-center">
-                  <a class="text-sky-400 mr-5" :href="`/product/edit/${product.id}`">Edit</a>
-
+                  <router-link class="text-sky-400 mr-5" :to="`/product/edit/${product.id}`">Edit</router-link>
                   <button type="button" @click="deleteProduct(product.id)" class="text-red-500">Delete</button>
                 </td>
               </tr>

@@ -24,8 +24,10 @@ const routes = [
   }
 ];
 
+const subdir = import.meta.env.VITE_SUBDIR;
+
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(subdir),
   routes
 });
 

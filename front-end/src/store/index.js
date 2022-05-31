@@ -57,6 +57,9 @@ const store = createStore({
           commit('setProductsLoading', false);
           commit('setProducts', res.data);
           return res;
+        }).catch((err) => {
+          commit('setProductsLoading', false);
+          throw err;
         });
       },
       deleteProduct({}, id) {

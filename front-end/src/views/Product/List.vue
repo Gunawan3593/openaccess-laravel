@@ -51,7 +51,12 @@
   const router = useRouter();
   const products = computed(() => store.state.products);
 
-  store.dispatch('getProducts');
+  store.dispatch('getProducts').catch(() => {
+    store.commit('notify', {
+      type: 'error',
+      message: 'There was an error occured. Please check your connection.'
+    });
+  });
 
 
   function deleteProduct(id) {
